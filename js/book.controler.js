@@ -18,7 +18,23 @@ const READ_ICON = '<iconify-icon width="1.5rem" inline icon="akar-icons:book"></
 const UPDATE_ICON = '<iconify-icon width="1.5rem" inline icon="arcticons:oxygenupdater"></iconify-icon>'
 const DELETE_ICON = '<iconify-icon width="1.5rem" inline icon="bytesize:trash"></iconify-icon>'
 
+$('document').ready(onInit)
+
 function onInit() {
+    addEventListeners()
+    $('header iconify-icon').addClass('show')
+    setTimeout(() => $('.headings-container').addClass('show'), 600);
+
+}
+
+function addEventListeners() {
+    $('.nav-item').on('click', function() {
+        $(this).find('.menu-modal').toggleClass('show')
+    })
+}
+
+
+function onInit1() {
     renderByQueryStrParam()
     gCurrViewState.renderAs(gCurrPage)
 }
@@ -309,4 +325,12 @@ function onSetPageSize(size) {
     pageSize = parseInt(size)
     setPageSize(size)
     gCurrViewState.renderAs()
+}
+
+function rangeSlide(elInput) {
+    $('.range-value').text(elInput.value)
+
+    const priceRange = getBookPricedRange()
+    elInput.min = priceRange.min
+    elInput.max = priceRange.max
 }

@@ -1,0 +1,89 @@
+nav {
+    animation-name: fadeInUpBig;
+    animation-duration: 1.2s;
+}
+
+.navbar-nav {
+    margin-inline-start: 0;
+    background-size: calc(60px+1rem) 100% !important;
+}
+
+.nav-link {
+    width: fit-content;
+}
+
+.background {
+    animation-name: fadeInUpBig;
+    animation-duration: 1.2s;
+}
+
+.menu-modal {
+    display: none;
+    position: fixed;
+    top: -100%;
+    left: -.5rem;
+    list-style: none;
+    width: fit-content;
+}
+
+.menu-modal.show {
+    position: relative;
+    display: block;
+    top: .5rem;
+    z-index: 2;
+}
+
+.show .dropdown_item .item-1 {
+    transform-origin: top center;
+    animation: rotateX 300ms 60ms ease-in-out forwards;
+}
+.show .dropdown_item .item-2 {
+    transform-origin: top center;
+    animation: rotateX 300ms 120ms ease-in-out forwards;
+}
+.show .dropdown_item .item-3 {
+    transform-origin: top center;
+    animation: rotateX 300ms 180ms ease-in-out forwards;
+}
+
+.menu-modal.hide {
+    position: relative;
+    display: block;
+    top: -100%;
+    opacity: 0;
+    z-index: 2;
+    animation: slideOutUp;
+    animation-duration: .3s;
+}
+
+.range-value {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    color: #f8f9fa;
+    font-weight: 400;
+    width: 100px;
+}
+
+.price-range {
+    width: 100px;
+    height: 10px;
+    appearance: none;
+    background: #222;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.price-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    cursor: pointer;
+    border: 4px solid #333;
+    box-shadow: -407px 0 0 400px #f8f9fa;
+}

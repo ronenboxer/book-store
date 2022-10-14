@@ -1,0 +1,27 @@
+.navbar-mobile-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.dropdown-menu{
+    background-color: transparent;
+}
+
+.menu-modal.mobile{
+    margin-inline-start: calc(.5rem + 60px);
+    background-color: transparent;
+}
+
+.dropdown-menu{
+    margin-inline-start: calc(.5rem + 60px) !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+
+}
+
+.navbar-nav{
+    margin-top: .625rem;
+    background-color: rgba(2, 2, 2, .3);
+    background-repeat: no-repeat;
+}

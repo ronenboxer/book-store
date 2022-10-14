@@ -1,0 +1,20 @@
+@font-face {
+    font-family: hebCurse;
+    src: url(../fonts/hebFont.otf);
+}
+@font-face {
+    font-family: assistant;
+    src: url(../fonts/Assistant/Assistant-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: sacramento;
+    src: url(../fonts/Sacramento/Sacramento-Regular.ttf);
+}
+@font-face {
+    font-family: satisfy;
+    src: url(../fonts/Satisfy/Satisfy-Regular.ttf);
+}

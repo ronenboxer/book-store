@@ -1,22 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookly</title>
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
-<body>
 
+<body>
+    <!-- header -->
+    <header>
+        <iconify-icon inline icon="mingcute:book-3-fill"></iconify-icon>
+        <div class="headings-container">
+            <div class="heading">Lorem</div>
+            <div class="heading">Ipsum</div>
+        </div>
+    </header>
+
+    <!-- nav -->
+    <div class="backgroud"
+        style="height:56px; width:100vw; clear:both; background-color: rgba(2,2,2,.3); position: fixed; top: 0; z-index: 1;">
+    <nav class="navbar fixed-top d-block navbar-expand-md py-2">
+        <div class="container ms-0">
+            <button class="navbar-mobile-btn" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="container text-light ps-3">
+                    <iconify-icon inline icon="clarity:menu-line"></iconify-icon>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav d-inline-block d-md-flex">
+                    <li class="nav-item dropdown px-3">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            VIEW
+                        </a>
+                        <div data-id="view" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a><a class="dropdown-item item-1" href="#">Action</a></a>
+                            <a><a class="dropdown-item item-2" href="#">Another action</a></a>
+                            <hr>
+                            <a><a class="dropdown-item item-3" href="#">Something else here</a></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown px-3">
+                        <a class="nav-link text-light" href="#" role="button" aria-expanded="false">
+                            FILTER
+                        </a>
+                        <ul data-id="filter" class="menu-modal mobile px-3">
+                            <li><a class="dropdown-item" href="#">
+                                    <lable> <span class="range-value"></span>
+                                    <Input class="price-range" type="range" 
+                                        onchange="rangeSlide(this)"></Input></lable>
+                                </a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown px-3">
+                        <a class="nav-link text-light" href="#" role="button" aria-expanded="false">
+                            SORT
+                        </a>
+                        <ul data-id="sort" class="menu-modal mobile px-3">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-light" href="#">ADD</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main-content">
+        <table class="table table-striped books-container">
+        </table>
+    </section>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
     <script src="js/lib/jQuery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
     <script src="js/services/utils.service.js"></script>
     <script src="js/services/i18n.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/book.service.js"></script>
+    <script src="js/services/nav.service.js"></script>
     <script src="js/book.controler.js"></script>
 </body>
-</html>
 
+</html>
