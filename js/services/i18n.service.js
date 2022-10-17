@@ -61,8 +61,8 @@ const gTrans = {
         he: 'הוספה'
     },
     'header-slogen': {
-        en: `LET'S SELL THEM BOOKS!`,
-        he: `בואו נמכור כמה ספרים!`
+        en: `CLICK HER TO SELL THEM BOOKS!`,
+        he: `פה לוחצים`
     },
     'header-lorem': {
         en: 'Lorem',
