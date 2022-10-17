@@ -1,0 +1,17 @@
+.headings-container {
+    font-size: 7.5rem;
+    top: 4rem;
+}
+
+.headings-container.heb {
+    top: 3.75rem;
+}
+
+.heading {
+    margin-bottom: 3.75rem;
+    margin-top: 1.5rem;
+}
+
+.logo iconify-icon {
+    font-size: 37.5rem;
+}

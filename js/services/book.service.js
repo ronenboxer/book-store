@@ -4,7 +4,7 @@ const STORAGE_KEY = 'bookDB'
 var gPageSize = 0
 
 var gBooks
-var gFilter = { maxPrice: Infinity, minRate: 0, txt: "" }
+var gFilter = { maxPrice: Infinity, minRate: 0, txt: "", isBookmarked: false }
 var gSort = { sortBy: '', orderMultiplier: 1 }
 _createBooks()
 var gNumOfPages = !gPageSize ? 0 : Math.ceil(gBooks.length / gPageSize)
@@ -19,9 +19,9 @@ function _createBooks() {
             author: 'GOD',
             rate: 10,
             price: 19.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/the-bible.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/the-bible.png'
         },
         {
             id: makeId(),
@@ -29,9 +29,9 @@ function _createBooks() {
             author: 'J.K. Rowlin',
             rate: 2,
             price: 29.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/harry-potter.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/harry-potter.png'
         },
         {
             id: makeId(),
@@ -39,9 +39,9 @@ function _createBooks() {
             author: 'Torklid Glaven',
             rate: 10,
             price: 49.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/einstein-was-wrong.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/einstein-was-wrong.png'
         },
         {
             id: makeId(),
@@ -49,9 +49,9 @@ function _createBooks() {
             author: 'Paulo Coelho',
             rate: 3,
             price: 34.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/the-alchemist.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/the-alchemist.png'
         },
         {
             id: makeId(),
@@ -59,9 +59,9 @@ function _createBooks() {
             author: 'Benny Goren',
             rate: 0,
             price: 4.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/algebra.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/algebra.png'
         },
         {
             id: makeId(),
@@ -69,9 +69,9 @@ function _createBooks() {
             author: 'Norah Ephron',
             rate: 5,
             price: 24.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/i-feel-bad-about-my-neck.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/i-feel-bad-about-my-neck.png'
         },
         {
             id: makeId(),
@@ -79,9 +79,9 @@ function _createBooks() {
             author: 'Malcolm Gladwell',
             rate: 6,
             price: 31.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/the-tipping-point.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/the-tipping-point.png'
         },
         {
             id: makeId(),
@@ -89,9 +89,9 @@ function _createBooks() {
             author: 'Malorie Blackman',
             rate: 5,
             price: 39.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/noughts-and-crosses.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/noughts-and-crosses.png'
         },
         {
             id: makeId(),
@@ -99,9 +99,9 @@ function _createBooks() {
             author: 'Yanis Varoufakis',
             rate: 3,
             price: 19.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/adults-in-the-room.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/adults-in-the-room.png'
         },
         {
             id: makeId(),
@@ -109,9 +109,9 @@ function _createBooks() {
             author: 'Niel Gaiman',
             rate: 8,
             price: 19.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/caroline.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/caroline.png'
         },
         {
             id: makeId(),
@@ -119,9 +119,9 @@ function _createBooks() {
             author: 'Jim Grace',
             rate: 5,
             price: 9.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/harvest.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/harvest.png'
         },
         {
             id: makeId(),
@@ -129,16 +129,16 @@ function _createBooks() {
             author: 'Sebastian Barry',
             rate: 9,
             price: 89.99,
-            isOnSale: false,
-            about: makeLorem(50),
-            imgUrl: './imgs/days-without-end.png'
+            isBookmarked: false,
+            about: makeLoremEng(75),
+            imgUrl: './imgs/book-covers/days-without-end.png'
         }]
     }
     gBooks = books
     _saveBooksToStorage()
 }
 
-function setFilter(filterBy= {}) {
+function setFilter(filterBy = {}) {
     for (var prop in gFilter) {
         if (filterBy[prop] !== undefined) gFilter[prop] = filterBy[prop]
     }
@@ -149,8 +149,8 @@ function getFilteredBooks() {
     sortBooks()
     gNumOfPages = calculteNumOfPages(gBooks)
     if (!gFilter || (gFilter.txt === '' &&
-    gFilter.maxPrice >= getBookPricedRange().max &&
-    gFilter.minRate === 0)) return getDeepCopy(gBooks)
+        gFilter.maxPrice >= getBookPricedRange().max &&
+        gFilter.minRate === 0 && !gFilter.isBookmarked)) return gBooks
     const books = gBooks.filter(book => isFitForFilter(book))
     gNumOfPages = calculteNumOfPages(books)
     return books
@@ -172,7 +172,7 @@ function isFitForFilter(book) {
         }
     }
     if (!isAnyStrMatches) return false
-    if (book.price > gFilter.maxPrice || book.rate < gFilter.minRate) return false
+    if (book.price > gFilter.maxPrice || book.rate < gFilter.minRate || book.isBookmarked !== gFilter.isBookmarked) return false
     return true
 }
 
@@ -186,15 +186,16 @@ function calculteNumOfPages(books) {
 
 function getBooksByPage(pageIdx) {
     var books = getFilteredBooks()
-    if (!gPageSize) return getDeepCopy(books)
+    if (!gPageSize) return books
     if (pageIdx < 0 || !gNumOfPages) pageIdx = 0
     else if (pageIdx >= gNumOfPages) pageIdx = gNumOfPages - 1
-    return getDeepCopy(books.slice(pageIdx * gPageSize, gPageSize * (pageIdx + 1)))
+    return books.slice(pageIdx * gPageSize, gPageSize * (pageIdx + 1))
 }
 
-function setSort(sortBy, orderMultiplier) {
-    if (sortBy !== undefined) gSort.sortBy = sortBy
-    if (orderMultiplier !== undefined) gSort.orderMultiplier = orderMultiplier
+function setSort(sortKeys) {
+    if (sortKeys.sortBy !== undefined) gSort.sortBy = sortKeys.sortBy
+    if (sortKeys.orderMultiplier !== undefined) gSort.orderMultiplier = sortKeys.orderMultiplier
+    else gSort.sortBy = sortKeys.sortBy
 }
 
 function sortBooks() {
@@ -222,7 +223,7 @@ function getBookIndexById(bookId) {
 function getBookById(bookId) {
     const book = gBooks.find(book => book.id === bookId)
     if (!book) return null
-    return getDeepCopy(book)
+    return book
 }
 
 function setBookRate(bookId, newRate) {
@@ -238,13 +239,28 @@ function toggleFavorite(bookId) {
     _saveBooksToStorage()
 }
 
-function updateBook(bookId, newPrice, isOnSale) {
-    const idx = getBookIndexById(bookId)
-    if (!gBooks[idx]) return
-    gBooks[idx].price = newPrice
-    gBooks[idx].isOnSale = isOnSale
+function updateBook(bookId, newVals) {
+    const book = getBookById(bookId)
+    if (!book) return
+    if (isTheSame(book, newVals)) return
+    for (var prop in newVals) {
+        if (newVals[prop] === '' ||
+            prop === 'price' && isNaN(newVals[prop])) continue
+            book[prop] = newVals[prop]
+    }
     _saveBooksToStorage()
 }
+
+function isTheSame(book, compare) {
+    for (var prop in compare) {
+        const val = compare[prop]
+        if (val === null || val === undefined ||
+        val === '' || (!isNaN(val) && +val < 0)) continue
+            if (val !== book[prop])return false
+    }
+    return true
+}
+
 function deleteBook(bookId) {
     const idx = getBookIndexById(bookId)
     const book = gBooks.splice(idx, 1)[0]
@@ -253,17 +269,17 @@ function deleteBook(bookId) {
     return book
 }
 
-function createBook(name, author, price, imgUrl, isOnSale) {
+function createBook(bookVals) {
     gBooks = loadFromStorage(STORAGE_KEY)
     gBooks.unshift({
         id: makeId(),
-        name,
-        author,
-        rate: 0,
-        price,
-        isOnSale,
-        about: makeLorem(50),
-        imgUrl
+        name: bookVals.name,
+        author: bookVals.author,
+        rate: bookVals.rate,
+        price: bookVals.price,
+        isBookmarked: bookVals.isBookmarked,
+        about: makeLoremEng(50),
+        imgUrl: bookVals.imgUrl
     })
     _saveBooksToStorage()
 }
@@ -278,7 +294,7 @@ function getBookPricedRange() {
     return { min, max }
 }
 
-function setPageSize(size){
+function setPageSize(size) {
     if (isNaN(size) || size < 0) return
     gPageSize = parseInt(size)
 }

@@ -1,0 +1,13 @@
+body.rtl{
+    direction: rtl;
+    font-family: assistant;
+}
+
+.rtl .language-set{
+    right: auto;
+    left: 0 ;
+}
+
+.rtl ul.navbar-nav{
+    padding-right: 0 !important;
+}

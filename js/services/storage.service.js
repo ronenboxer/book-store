@@ -9,25 +9,6 @@ function saveToStorage(key, val) {
     localStorage.setItem(key, JSON.stringify(val))
 }
 
-function makeLoremEng(wordCount = 100) {
-    const words = ['The sky', 'above', 'the port', 'was', 'the color of television', 'tuned', 'to', 'a dead channel', '.', 'All', 'this happened', 'more or less', '.', 'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'in such cases', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn']
-    var txt = ''
-    while (wordCount > 0) {
-        wordCount--
-        txt += words[Math.floor(Math.random() * words.length)] + ' '
-    }
-    return txt
-}
-function makeLoremHeb(wordCount = 100) {
-    const words = ['השמיים', 'מעל', 'המזח', 'היו', 'בצבע של טלויזיה', 'פתוחה', 'על', 'ערוץ מת', '.', 'כל', 'זה קרה', 'פחות או יותר', '.', 'אני', 'שמעתי', 'את הסיפור הזה', 'פעם אחר פעם', 'ממגוון אנשים', 'וכפי', 'שבד״כ', 'קורה', 'במקרים כאלה', 'בכל', 'פעם', 'הוא', 'סיפור שונה', '.', 'היה', 'לי', 'העונג', 'לשרוף', 'אותם']
-    var txt = ''
-    while (wordCount > 0) {
-        wordCount--
-        txt += words[Math.floor(Math.random() * words.length)] + ' '
-    }
-    return txt
-}
-
 function getPageNumsHtmlStr(currPageIdx, numOfPages, goToFunc) {
     var pageStr = ''
     if (numOfPages <= 1) return pageStr

@@ -1,0 +1,56 @@
+.headings-container {
+    font-size: 3rem;
+    top: 2rem;
+}
+
+.headings-container.heb {
+    top: 1.5rem;
+}
+
+.heading {
+    margin-bottom: 1.5rem;
+}
+
+.logo iconify-icon {
+    font-size: 15rem;
+}
+
+li.nav-item {
+    width: 16rem;
+    background-color: black !important;
+}
+
+.nav-link {
+    margin-inline-start: 1rem;
+    margin-top: 1rem;
+}
+
+.dropdown-item {
+    margin-inline-start: 2rem;
+    line-height: 2.5rem !important;
+    padding-top: .375rem;
+}
+
+.dropdown-item .input-text {
+    width: 12rem;
+}
+
+.dropdown-item>.input-range {
+    top: 0;
+    left: 4.5rem;
+}
+
+.rtl .dropdown-item>.input-range {
+    left: auto;
+    right: 2.5rem;
+}
+
+.filter .dropdown-item{
+    margin-inline-start: 0;
+    padding-inline-start: 2rem;
+    width: 14rem;
+}
+
+li.nav-item:hover {
+    background-color: rgb(28, 28, 28) !important;
+}

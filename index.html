@@ -11,77 +11,199 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="">
     <!-- header -->
     <header>
-        <iconify-icon inline icon="mingcute:book-3-fill"></iconify-icon>
-        <div class="headings-container">
-            <div class="heading">Lorem</div>
-            <div class="heading">Ipsum</div>
-        </div>
+        <a href="#books-container">
+            <h1 data-trans="header-slogen">CLICK TO SELL THEM BOOKS!</h1>
+        </a>
+        <section class="logo">
+            <iconify-icon inline icon="mingcute:book-3-fill"></iconify-icon>
+            <div class="headings-container">
+                <div class="heading" data-trans="header-lorem">Lorem</div>
+                <div class="heading" data-trans="header-ipsum">Ipsum</div>
+            </div>
+        </section>
     </header>
 
     <!-- nav -->
-    <div class="backgroud"
-        style="height:56px; width:100vw; clear:both; background-color: rgba(2,2,2,.3); position: fixed; top: 0; z-index: 1;">
-    <nav class="navbar fixed-top d-block navbar-expand-md py-2">
-        <div class="container ms-0">
-            <button class="navbar-mobile-btn" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <div class="container text-light ps-3">
-                    <iconify-icon inline icon="clarity:menu-line"></iconify-icon>
-                </div>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav d-inline-block d-md-flex">
-                    <li class="nav-item dropdown px-3">
-                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            VIEW
-                        </a>
-                        <div data-id="view" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a><a class="dropdown-item item-1" href="#">Action</a></a>
-                            <a><a class="dropdown-item item-2" href="#">Another action</a></a>
-                            <hr>
-                            <a><a class="dropdown-item item-3" href="#">Something else here</a></a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown px-3">
-                        <a class="nav-link text-light" href="#" role="button" aria-expanded="false">
-                            FILTER
-                        </a>
-                        <ul data-id="filter" class="menu-modal mobile px-3">
-                            <li><a class="dropdown-item" href="#">
-                                    <lable> <span class="range-value"></span>
-                                    <Input class="price-range" type="range" 
-                                        onchange="rangeSlide(this)"></Input></lable>
-                                </a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown px-3">
-                        <a class="nav-link text-light" href="#" role="button" aria-expanded="false">
-                            SORT
-                        </a>
-                        <ul data-id="sort" class="menu-modal mobile px-3">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link text-light" href="#">ADD</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="language-set"><span class="en">En</span> | <span class="he">עב</span></div>
+    <div class="nav-backgroud"
+        style="height:56px; width:100vw; clear:both; background-color: rgb(0,0,0); position: fixed; top: 0; z-index: 1;">
+    </div>
+    <nav class="main-nav navbar navbar-expand-sm fixed-top .bg-transparent">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <iconify-icon inline icon="healthicons:ui-menu" width="30" height="30"></iconify-icon>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item view menu">
+                    <a class="nav-link view" type="button" data-bs-toggle="collapse" data-bs-target="#view-dropdown"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        data-trans="nav-view">
+                        VIEW
+                    </a>
+                    <ul class="collapse nav-item" id="view-dropdown">
+                        <li><a class="dropdown-item" data-name="table">
+                                <iconify-icon inline icon="uit:table"></iconify-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-name="cards">
+                                <iconify-icon inline icon="ph:cards-thin"></iconify-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-name="carousel">
+                                <iconify-icon inline icon="carbon:carousel-horizontal"></iconify-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item sort menu">
+                    <a class="nav-link sort" type="button" data-bs-toggle="collapse" data-bs-target="#sort-dropdown"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span data-trans="nav-sort">SORT</span>
+                        <span class="sort-direction" data-id="up">
+                            <iconify-icon class="up" inline icon="bi:arrow-down"></iconify-icon>
+                        </span>
+                    </a>
+                    <ul class="collapse nav-item" id="sort-dropdown">
+                        <li>
+                            <a class="dropdown-item" data-sort-id="direction" data-sort-by="1" data-trans="sort-direction">direction</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-sort-by="" data-trans="sort-default">default</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-sort-by="id" data-trans="sort-id">id
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-sort-by="price" data-trans="sort-price">price</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-sort-by="rate" data-trans="sort-rating">rating</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-sort-by="name" data-trans="sort-name">name</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-sort-by="author" data-trans="sort-author">author</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item filter menu">
+                    <a class="nav-link filter" type="button" data-bs-toggle="collapse" data-bs-target="#filter-dropdown"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        data-trans="nav-filter">
+                        FILTER
+                    </a>
+                    <ul class="collapse nav-item" id="filter-dropdown">
+                        <form class="filter-form">
+                            <li class="dropdown-item">
+                                <span data-trans="filter-price">price</span>
+                                <div class="price-range input-range">
+                                    <lable>
+                                        <Input class="input-range" type="range" data-id="max-price" step="0.01">
+                                        </Input>
+                                    </lable>
+                                    <span class="input-value">
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="dropdown-item">
+                                <span data-trans="filter-rating">rating</span>
+                                <div class="rate-range input-range">
+                                    <lable>
+                                        <Input class="input-range" min="0" max="10" value="0" type="range" step="1"
+                                            data-id="min-rate">
+                                        </Input>
+                                    </lable>
+                                    <span class="input-value">0
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="dropdown-item">
+                                <span data-trans="filter-bookmark">bookmark</span>
+                                <button class="is-bookmarked" data-is-bookmarked="false">
+                                    <iconify-icon inline icon="clarity:heart-line"></iconify-icon>
+                                </button>
+                            </li>
+                            <li class="dropdown-item">
+                                <span>
+                                    <input class="input-text" type="text" data-id="txt" placeholder="free search">
+                                </span>
+                            </li>
+                        </form>
+                    </ul>
+                </li>
+                <li class="nav-item add">
+                    <span class="nav-link add" type="button" data-trans="nav-add" data-bs-toggle="modal" data-bs-target="#modal" data-modal-name="add">
+                        ADD
+                    </span>
+                    <!-- <ul class="collapse nav-item" id="add-dropdown">
+                        <li class="dropdown-item">
+                            <label>name
+                                <input class="input-text" type="text" name="" id="">
+                            </label>
+                        </li>
+                        <li class="dropdown-item">
+                            <label>author
+                                <input class="input-text" type="text" name="" id="">
+                            </label>
+                        </li>
+                        <li class="dropdown-item">
+                            <label>price
+                                <input class="input-text" type="text" name="" id="">
+                            </label>
+                        </li>
+                        <li class="dropdown-item">
+                            on sale?
+                            <span class="on-sale-filter">
+                                <iconify-icon inline icon="clarity:heart-line"></iconify-icon>
+                            </span>
+                        </li>
+                        <li class="dropdown-item">
+                            <iconify-icon class="add-book" inline icon="akar-icons:book-open"></iconify-icon>
+                        </li> -->
+            </ul>
+            </li>
+            </ul>
         </div>
     </nav>
 
-    <section class="main-content">
-        <table class="table table-striped books-container">
-        </table>
+    <section class="modal-container">
+        <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    
+
+    <div class="main-content">
+        <section class="page-sizing"> 
+            <div class="view-per-page"></div>
+            <div class="pages-container"></div>
+        </section>
+        <sectionc class="books-container" id="books-container">
+            </section>
+    </div>
+
+    <footer class="page-sizing">
+        <div class="pages-container"></div>
+        <div class="view-per-page"></div>
+    </footer>
 
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
@@ -93,7 +215,6 @@
     <script src="js/services/i18n.service.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/book.service.js"></script>
-    <script src="js/services/nav.service.js"></script>
     <script src="js/book.controler.js"></script>
 </body>
 

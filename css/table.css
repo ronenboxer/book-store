@@ -1,0 +1,39 @@
+table,
+th,
+td {
+    border: none !important;
+}
+
+table {
+    margin-block: 10rem;
+    border-spacing: 0 10px !important;
+    margin-bottom: auto;
+}
+
+td {
+    background-color: rgba(141, 141, 183,.8) !important;
+}
+
+th {
+    background-color: rgba(60, 60, 60, 0.8) !important;
+    color: #f8f9fa;
+    padding-block: 2rem !important;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+th{
+    text-align: center !important;
+}
+
+td.is-bookmarked{
+    color: black !important;
+    padding-inline: 1.5rem !important;
+}
+td.is-bookmarked iconify-icon{
+    margin: auto;
+    cursor: auto;
+}
+
+td.book-rating{
+    text-align: center;
+}

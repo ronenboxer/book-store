@@ -1,0 +1,148 @@
+.modal-content {
+    border-radius: 0 !important;
+    color: #f8f9fa !important;
+    background-color: #222 !important;
+}
+
+.modal-content img {
+    width: 50%;
+    float: left;
+    margin-inline-end: 1rem;
+    margin-top: .5rem;
+}
+
+.modal-content button {
+    color: #f8f9fa !important;
+    background-color: transparent;
+    border: none;
+    transition: .1s;
+    font-size: 1.5rem;
+}
+
+.btn-close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.modal-body p {
+    text-align: justify;
+}
+
+.modal-header {
+    display: block !important;
+}
+
+[data-modal-name="read"] .modal-footer {
+    display: flex;
+    justify-content: space-evenly !important;
+    width: 100%;
+}
+
+.modal button.cancel,
+.modal button.ok {
+    font-size: 1rem;
+}
+
+[data-modal-name="read"] .modal-header span,
+[data-modal-name="update"] .modal-header span,
+[data-modal-name="add"] .modal-header span,
+.modal button:hover {
+    color: rgb(183, 132, 45) !important;
+}
+
+.modal-footer .book-rating {
+    margin-inline: 1rem;
+    font-size: 1.3rem;
+}
+
+.update-form,
+.add-form {
+    display: flex !important;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.update-flex,
+.add-flex {
+    flex-grow: 2;
+    min-width: 46%;
+}
+
+/* .upload-method button,
+.upload-method input::-webkit-file-upload-button {
+    display: inline-block !important;
+    border: none !important;
+    border-top: .5px solid rgba(248, 249, 250, .7) !important;
+    border-bottom: .5px solid rgba(248, 249, 250, .7) !important;
+    outline: none !important;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #f8f9fa !important;
+    font-size: 1rem !important;
+    margin-bottom: 0 !important;
+} */
+
+
+.update-form .update-flex input,
+.update-form .update-flex .cover-upload .add-form .add-flex input,
+.add-form .add-flex .cover-upload,
+.add-form .add-flex .cover-upload .add-form .add-flex input {
+    display: block;
+}
+
+.update-form .update-flex>span,
+.add-form .add-flex>span {
+    display: block;
+    margin-top: 1rem;
+    width: calc(100% - 1rem);
+    max-width: 100%;
+    text-align: center;
+    line-height: calc(1rem + .5px);
+}
+
+.update-form .update-flex>*,
+.add-form .add-flex>* {
+    margin: 1rem;
+}
+
+.update-form .update-flex input,
+.add-form .add-flex input {
+    background-color: transparent;
+    height: 1.2rem;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: .7px solid #f8f9fa;
+    overflow: auto;
+    color: #f8f9fa;
+    width: calc(100% - 2rem);
+    font-size: 1rem;
+}
+
+.update-form .update-flex input::-webkit-input-placeholder,
+.add-form .add-flex input::-webkit-input-placeholder {
+    color: rgb(183, 132, 45);
+}
+
+.update-form .update-flex input[type="url"]::-webkit-input-placeholder,
+.add-form .add-flex input[type="url"]::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.update-form .book-rating-container,
+.add-form .book-rating-container {
+    font-size: 1rem;
+    line-height: calc(1rem + .5px);
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.modal .is-bookmarked{
+    margin-inline: auto;
+}
+
+.modal .is-bookmarked iconify-icon{
+    margin: 0;
+}
